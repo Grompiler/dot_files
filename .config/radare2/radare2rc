@@ -1,0 +1,29 @@
+# Use UTF-8 to show cool arrows that do not look like crap :)
+e scr.utf8 = true
+
+# Show comments at right of disassembly if they fit in screen
+#e asm.cmt.right=true
+
+# Shows pseudocode in disassembly. Eg mov eax, str.ok = > eax = str.ok
+e asm.pseudo = true
+
+# r2dec.asm | if true, shows pseudo next to the assembly.
+e r2dec.asm=true
+
+# r2dec.xrefs | if true, shows all xrefs in the pseudo code.
+# e r2dec.xrefs=true
+
+###########################
+###### r2dec options ######
+###########################
+# https://github.com/wargio/r2dec-js
+# r2dec.asm           | if true, shows pseudo next to the assembly.
+# r2dec.blocks        | if true, shows only scopes blocks.
+# r2dec.casts         | if false, hides all casts in the pseudo code.
+# r2dec.debug         | do not catch exceptions in r2dec.
+# r2dec.paddr         | if true, all xrefs uses physical addresses compare.
+# r2dec.slow          | if true load all the data before to avoid multirequests to r2.
+# r2dec.theme         | defines the color theme to be used on r2dec.
+# r2dec.xrefs         | if true, shows all xrefs in the pseudo code.
+# e scr.html          | outputs html data instead of text.
+# e scr.color         | enables syntax colors.

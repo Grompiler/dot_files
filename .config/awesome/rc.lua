@@ -74,7 +74,7 @@ awful.spawn.with_shell(
 local chosen_theme = "my_theme"
 local modkey       = "Mod4"
 local altkey       = "Mod1"
-local terminal     = "urxvt"
+local terminal     = "alacritty"
 local editor       = "nano" --or os.getenv("EDITOR")
 local browser      = "firefox"
 local guieditor    = "code"

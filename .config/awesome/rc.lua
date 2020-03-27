@@ -516,7 +516,7 @@ globalkeys = my_table.join(
     --]]
     -- dmenu
     awful.key({ modkey }, "d", function ()
-            os.execute(string.format("dmenu_run -i -fn 'Monospace' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
+            os.execute(string.format("dmenu_run -i -fn 'Monospace 12' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
             beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
         end,
         {description = "show dmenu", group = "launcher"}),

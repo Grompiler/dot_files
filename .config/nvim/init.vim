@@ -39,6 +39,8 @@ colorscheme dracula
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDSpaceDelims = 1
 " Jump to start and end of line using the home row keys
+nnoremap H <nop>
+nnoremap L <nop>
 nnoremap H ^
 nnoremap L $
 nnoremap <up> <nop>

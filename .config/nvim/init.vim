@@ -7,6 +7,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'itchyny/lightline.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
@@ -26,6 +27,7 @@ set hidden " Allows you to switch buffers without saving current
 let g:rustfmt_autosave = 1
 let g:LanguageClient_diagnosticsEnable = 0
 let g:LanguageClient_changeThrottle = 0.1
+" let g:racer_experimental_completer = 1
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ }
@@ -43,6 +45,8 @@ nnoremap H <nop>
 nnoremap L <nop>
 nnoremap H ^
 nnoremap L $
+nmap <CR> O<Esc>j
+" nmap <CR> o<Esc>k
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>

@@ -18,8 +18,7 @@ call plug#end()
 let g:coc_node_path = "/usr/bin/node"
 let g:coc_global_extensions = [
                         \'coc-rls',
-                        \'coc-snippets',
-]
+                        \'coc-snippets']
 set nocompatible
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -58,6 +57,8 @@ nmap <F2> <Plug>(coc-rename)
 
 set termguicolors
 set mouse=a
+
+
 set number relativenumber
 set autoindent
 set encoding=utf-8
@@ -80,7 +81,7 @@ nnoremap L <nop>
 nnoremap H ^
 nnoremap L $
 nmap <CR> O<Esc>j
-" nmap <CR> o<Esc>k
+nmap <backspace> dd
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>

@@ -58,7 +58,7 @@ nmap <F2> <Plug>(coc-rename)
 set termguicolors
 set mouse=a
 
-
+set clipboard+=unnamedplus
 set number relativenumber
 set autoindent
 set encoding=utf-8

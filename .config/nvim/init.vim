@@ -20,6 +20,8 @@ let g:coc_global_extensions = [
                         \'coc-rls',
                         \'coc-snippets']
 set nocompatible
+" insert spaces instead of tab
+set expandtab
 set ts=4 sw=4
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by

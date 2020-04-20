@@ -57,6 +57,9 @@ end
 
 run_once({ "setxkbmap -layout \"us,fr,ru\" -option \"grp:ctrls_toggle\"", "unclutter -root" }) -- entries must be separated by commas
 
+-- window opacity
+os.execute("picom -b")
+
 -- This function implements the XDG autostart specification
 --[[
 awful.spawn.with_shell(
@@ -82,7 +85,7 @@ local scrlocker    = "slock"
 local explorer     = "nautilus"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5" , "6", "7"}
+awful.util.tagnames = { "1", "2", "3", "4", "5" , "6", "7", "8"}
 awful.layout.layouts = {
     -- awful.layout.suit.tile.left,
     -- awful.layout.suit.tile,

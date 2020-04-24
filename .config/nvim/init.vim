@@ -82,8 +82,6 @@ nnoremap H <nop>
 nnoremap L <nop>
 nnoremap H ^
 nnoremap L $
-nmap <CR> O<Esc>j
-nmap <backspace> dd
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>

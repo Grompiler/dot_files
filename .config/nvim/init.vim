@@ -40,6 +40,9 @@ endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " GoTo code navigation.
+nmap <silent> E <Plug>(coc-diagnostic-prev)
+nmap <silent> W <Plug>(coc-diagnostic-next)
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)

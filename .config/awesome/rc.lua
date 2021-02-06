@@ -82,7 +82,7 @@ local editor       = "nano" --or os.getenv("EDITOR")
 local browser      = "firefox"
 local guieditor    = "code"
 local scrlocker    = "slock"
-local explorer     = "nautilus"
+local explorer     = "thunar"
 
 awful.util.terminal = terminal
 awful.util.tagnames = { "1", "2", "3", "4", "5" , "6", "7", "8"}

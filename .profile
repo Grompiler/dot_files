@@ -6,4 +6,6 @@
 # export BROWSER="firefox"
 # export READER="zathura"
 # export FILE="nautilus"
-# export PATH="$HOME/.cargo/bin:$PATH"
+
+# if rust is installed
+export PATH="$HOME/.cargo/bin:$PATH"

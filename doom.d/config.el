@@ -94,7 +94,9 @@
 ;;
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 (setq tab-width 4)
-;; (setq doom/set-indent-width 4)
+(setq-default doom/set-indent-width 4)
+(setq-default indent-tabs-mode nil)
+
 
 (custom-set-faces!
   '(flycheck-error :underline nil)

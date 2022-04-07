@@ -29,7 +29,6 @@
 ;; `load-theme' function. This is the default:
 
 ;; customize dracula theme in ~/.emacs.d/.local/straight/repos/themes/themes
-;; (constants      green)
 ;; (methods        green)
 ;; (operators      green)
 ;; (type           cyan)
@@ -97,7 +96,6 @@
 (setq-default doom/set-indent-width 4)
 (setq-default indent-tabs-mode nil)
 
-
 (custom-set-faces!
   '(flycheck-error :underline nil)
   '(flycheck-warning :underline nil)
@@ -142,6 +140,26 @@
     :desc "Hide other projects"
     "p h" #'treemacs-display-current-project-exclusively)
 
+
+;; Jumps
+(setq avy-background nil)
+
+(map! :leader
+    (:prefix ("j" . "jump")
+    :desc "Go to line"
+    "l" #'avy-goto-line))
+(map! :leader
+    (:prefix ("j" . "jump")
+    :desc "Go to end of line"
+    "e" #'avy-goto-end-of-line))
+(map! :leader
+    (:prefix ("j" . "jump")
+    :desc "Go to word (1 char input)"
+    "w" #'avy-goto-word-1))
+(map! :leader
+    (:prefix ("j" . "jump")
+    :desc "Go to word (1 char input)"
+    "j" #'avy-goto-word-1))
 
 ;; Errors
 (map! :leader

@@ -121,6 +121,14 @@
 (global-set-key (kbd "C-h") (kbd "^"))
 (global-set-key (kbd "C-l") (kbd "$"))
 
+(when (fboundp 'rustic-mode)
+  (defun rust-major-config ()
+    "For use in `rust-mode-hook'."
+    (local-set-key (kbd "C-c C-c C-e") 'rustic-cargo-expand)
+    ;; more stuff here
+    )
+  (add-hook 'rustic-mode-hook 'rust-major-config))
+
 ;; Functions
 
 (advice-add 'evil-ex-search-next :after

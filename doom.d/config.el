@@ -141,7 +141,7 @@
 
 (with-eval-after-load 'company
     (define-key company-active-map (kbd "<tab>") 'company-complete-selection))
-
+(setq company-backends '(company-dabbrev))
 
 ;; Projects
 (map! :leader

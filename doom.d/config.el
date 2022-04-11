@@ -75,16 +75,16 @@
 
 ;; Custom settings
 ;; Magit
-(global-display-line-numbers-mode t)
-(setq magit-section-disable-line-numbers nil)
+;; (global-display-line-numbers-mode t)
+;; (setq magit-section-disable-line-numbers nil)
 (custom-set-faces
- '(diff-refine-added ((t (:inherit diff-added :foreground "#40c862" :inverse-video t))))
+ '(diff-refine-added ((t (:inherit diff-added :background "#50fa7b" :foreground "nil" :inverse-video t :weight ultrabold))))
  '(magit-diff-added ((t (:extend t :foreground "#40c862" :background nil))))
- '(magit-diff-added-highlight ((t (:extend t :foreground "#50fa7b" :background nil :weight bold))))
+ '(magit-diff-added-highlight ((t (:extend t :foreground "#40c862" :background nil :weight normal))))
 
- '(diff-refine-removed ((t (:inherit diff-removed :foreground "#cc4444" :inverse-video t))))
+ '(diff-refine-removed ((t (:inherit diff-removed :background "#ff5555" :foreground "nil" :inverse-video t :weight ultrabold))))
  '(magit-diff-removed ((t (:extend t :foreground "#cc4444" :background nil))))
- '(magit-diff-removed-highlight ((t (:extend t :foreground "#ff5555" :background nil :weight bold)))))
+ '(magit-diff-removed-highlight ((t (:extend t :foreground "#cc4444" :background nil :weight normal)))))
 
 ;; Which Key
 (setq which-key-idle-delay 3)

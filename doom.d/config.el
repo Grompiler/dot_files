@@ -215,3 +215,4 @@
 
 (map! :n "o" #'+default/newline-below)
 (map! :n "O" #'+default/newline-above)
+(setq which-key-idle-delay 3)

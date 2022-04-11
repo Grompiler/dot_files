@@ -74,6 +74,21 @@
 
 
 ;; Custom settings
+;; Magit
+(global-display-line-numbers-mode t)
+(setq magit-section-disable-line-numbers nil)
+(custom-set-faces
+ '(diff-refine-added ((t (:inherit diff-added :foreground "#40c862" :inverse-video t))))
+ '(magit-diff-added ((t (:extend t :foreground "#40c862" :background nil))))
+ '(magit-diff-added-highlight ((t (:extend t :foreground "#50fa7b" :background nil :weight bold))))
+
+ '(diff-refine-removed ((t (:inherit diff-removed :foreground "#cc4444" :inverse-video t))))
+ '(magit-diff-removed ((t (:extend t :foreground "#cc4444" :background nil))))
+ '(magit-diff-removed-highlight ((t (:extend t :foreground "#ff5555" :background nil :weight bold)))))
+
+;; Which Key
+(setq which-key-idle-delay 3)
+
 ;; Modeline
 (after! doom-modeline
       (doom-modeline-def-modeline 'main
@@ -128,7 +143,6 @@
     ;; more stuff here
     )
   (add-hook 'rustic-mode-hook 'rust-major-config))
-
 ;; Functions
 
 (advice-add 'evil-ex-search-next :after
@@ -142,6 +156,7 @@
 (with-eval-after-load 'company
     (define-key company-active-map (kbd "<tab>") 'company-complete-selection))
 (setq company-backends '(company-dabbrev))
+
 
 ;; Projects
 (map! :leader
@@ -215,4 +230,4 @@
 
 (map! :n "o" #'+default/newline-below)
 (map! :n "O" #'+default/newline-above)
-(setq which-key-idle-delay 3)
+

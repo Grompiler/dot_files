@@ -80,11 +80,11 @@
 (custom-set-faces
  '(diff-refine-added ((t (:inherit diff-added :background "#50fa7b" :foreground "nil" :inverse-video t :weight ultrabold))))
  '(magit-diff-added ((t (:extend t :foreground "#40c862" :background nil))))
- '(magit-diff-added-highlight ((t (:extend t :foreground "#40c862" :background nil :weight normal))))
+ '(magit-diff-added-highlight ((t (:extend t :foreground "#40c862" :background nil))))
 
  '(diff-refine-removed ((t (:inherit diff-removed :background "#ff5555" :foreground "nil" :inverse-video t :weight ultrabold))))
  '(magit-diff-removed ((t (:extend t :foreground "#cc4444" :background nil))))
- '(magit-diff-removed-highlight ((t (:extend t :foreground "#cc4444" :background nil :weight normal)))))
+ '(magit-diff-removed-highlight ((t (:extend t :foreground "#cc4444" :background nil)))))
 
 ;; Which Key
 (setq which-key-idle-delay 3)

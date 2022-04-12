@@ -130,6 +130,9 @@
 
 ;; (setq lsp-enable-file-watchers nil)
 
+(setq evil-want-fine-undo t)
+
+(add-hook 'rustic-mode-hook 'yas-minor-mode)
 ;; Keybindings
 (global-set-key (kbd "C-j") (kbd "Lzz"))
 (global-set-key (kbd "C-k") (kbd "Hzz"))

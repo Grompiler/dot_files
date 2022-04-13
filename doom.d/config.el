@@ -28,10 +28,6 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 
-;; customize dracula theme in ~/.emacs.d/.local/straight/repos/themes/themes
-;; (methods        green)
-;; (operators      green)
-;; (type           cyan)
 (setq doom-theme 'doom-dracula)
 
 ;; (setq bg1 nil) ;; terminal is ugly
@@ -72,8 +68,19 @@
   (global-tree-sitter-mode)
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
-
 ;; Custom settings
+;; Font colors
+
+(custom-set-faces
+ '(font-lock-variable-name-face ((t (:foreground "white"))))
+ '(font-lock-builtin-face ((t (:foreground "#bd93f9"))))
+ '(font-lock-negation-char-face ((t (:foreground "#bd93f9" :weight normal))))
+ '(font-lock-type-face ((t (:foreground "#88eeff"))))
+ ;; '(tree-sitter-hl-face:method\.call ((t (:inherit tree-sitter-hl-face:method\.call :forground "#50fa7b" :weight normal :slant normal))))
+ '(tree-sitter-hl-face:operator ((t (:inherit tree-sitter-hl-face:keyword :foreground "#ffbb66"))))
+ '(tree-sitter-hl-face:function\.call ((t (:inherit tree-sitter-hl-face:function\.call :foreground "#50fa7b" :weight normal :slant normal))))
+ '(font-lock-preprocessor-face ((t (:foreground "#50fa7b" :weight normal)))))
+
 ;; Magit
 ;; (global-display-line-numbers-mode t)
 ;; (setq magit-section-disable-line-numbers nil)
@@ -221,6 +228,7 @@
 
 ;; git refresh branch
 (map! :leader
+
       (:desc "Update buffer's branch"
        "g ;" #'vc-refresh-state))
 

@@ -79,6 +79,7 @@
  ;; '(tree-sitter-hl-face:method\.call ((t (:inherit tree-sitter-hl-face:method\.call :forground "#50fa7b" :weight normal :slant normal))))
  '(tree-sitter-hl-face:operator ((t (:inherit tree-sitter-hl-face:keyword :foreground "#ffbb66"))))
  '(tree-sitter-hl-face:function\.call ((t (:inherit tree-sitter-hl-face:function\.call :foreground "#50fa7b" :weight normal :slant normal))))
+ '(tree-sitter-hl-face:property ((t (:inherit font-lock-constant-face :slant normal))))
  '(font-lock-preprocessor-face ((t (:foreground "#50fa7b" :weight normal)))))
 
 ;; Magit

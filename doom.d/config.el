@@ -140,6 +140,10 @@
 (setq evil-want-fine-undo t)
 
 (add-hook 'rustic-mode-hook 'yas-minor-mode)
+
+;; Consider _ as part of the word
+(modify-syntax-entry ?_ "w")
+
 ;; Keybindings
 (global-set-key (kbd "C-j") (kbd "Lzz"))
 (global-set-key (kbd "C-k") (kbd "Hzz"))

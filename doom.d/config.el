@@ -97,6 +97,12 @@
 ;; Which Key
 (setq which-key-idle-delay 3)
 
+;; Org Mode
+(after! org
+  (map! :map org-mode-map
+        :n "C-j" "Lzz"
+        :n "C-k" "Hzz"))
+
 ;; Modeline
 (after! doom-modeline
       (doom-modeline-def-modeline 'main

@@ -237,6 +237,17 @@
     (:desc "Toggle comment"
     ";" #'evilnc-comment-or-uncomment-lines))
 
+;; change indentation style
+(map! :leader
+    (:prefix ("f i" . "Indentation style")
+    :desc "Convert selection to spaces"
+    "s" #'untabify))
+
+(map! :leader
+    (:prefix ("f i" . "Indentation style")
+    :desc "Convert selection to tabs"
+    "t" #'tabify))
+
 ;; git refresh branch
 (map! :leader
 

@@ -114,6 +114,9 @@
 (setq doom-modeline-height 36)
 (setq doom-modeline-vcs-max-length 40)
 
+;; Shell
+(setq-default shell-file-name "/bin/fish")
+
 ;; Tabs
 (setq centaur-tabs-height 32)
 (setq centaur-tabs-label-fixed-length 10)

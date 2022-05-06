@@ -144,6 +144,7 @@
 (setq lsp-modeline-diagnostics-enable nil)
 (setq lsp-modeline-code-actions-enable nil)
 (setq lsp-signature-auto-activate nil)
+(setq lsp-eldoc-enable-hover nil)
 
 ;; (setq lsp-enable-file-watchers nil)
 

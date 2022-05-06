@@ -268,3 +268,8 @@
 (map! :n "o" #'+default/newline-below)
 (map! :n "O" #'+default/newline-above)
 
+;; re-map those, monkey patching global-set-key
+(map! :n "C-j" (kbd "Lzz"))
+(map! :n "C-k" (kbd "Hzz"))
+(map! :n "C-h" (kbd "^"))
+(map! :n "C-l" (kbd "$"))

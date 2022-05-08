@@ -117,6 +117,9 @@
 ;; Shell
 (setq-default shell-file-name "/bin/fish")
 
+;; Vterm
+(setq-default vterm-timer-delay 0.01)
+
 ;; Tabs
 (setq centaur-tabs-height 32)
 (setq centaur-tabs-label-fixed-length 10)

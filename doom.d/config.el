@@ -96,6 +96,7 @@
 
 ;; Which Key
 (setq which-key-idle-delay 3)
+(which-key-setup-minibuffer)
 
 ;; Org Mode
 (after! org

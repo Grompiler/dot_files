@@ -154,7 +154,11 @@
 
 (setq evil-want-fine-undo t)
 
+;; Rust
 (add-hook 'rustic-mode-hook 'yas-minor-mode)
+
+;; Elm
+(remove-hook 'elm-mode-hook 'elm-indent-mode)
 
 ;; Consider _ as part of the word
 (modify-syntax-entry ?_ "w")
@@ -184,8 +188,9 @@
 
 (with-eval-after-load 'company
     (define-key company-active-map (kbd "<tab>") 'company-complete-selection))
-(setq company-backends '(company-dabbrev))
-
+(setq company-backends '(company-dabbrev-code))
+(setq company-dabbrev-other-buffers nil)
+(setq company-idle-delay 0.8)
 
 ;; Projects
 (map! :leader

@@ -190,7 +190,9 @@
     (define-key company-active-map (kbd "<tab>") 'company-complete-selection))
 (setq company-backends '(company-dabbrev-code))
 (setq company-dabbrev-other-buffers nil)
-(setq company-idle-delay 0.8)
+(map! :leader
+     :desc "Auto-completion"
+     "t a" #'+company/toggle-auto-completion)
 
 ;; Projects
 (map! :leader

@@ -160,6 +160,10 @@
 ;; Elm
 (remove-hook 'elm-mode-hook 'elm-indent-mode)
 
+;; Case insensitive search
+(custom-set-variables
+ '(evil-ex-search-case 'insensitive))
+
 ;; Consider _ as part of the word
 (modify-syntax-entry ?_ "w")
 

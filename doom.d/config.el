@@ -289,9 +289,6 @@
 (map! :n "C-h" (kbd "^"))
 (map! :n "C-l" (kbd "$"))
 
-;; remap evil-ex-search-forward to work properly
-(map! :n "*" (kbd "viw*"))
-
 ;; Simpler dashboard
 (defun doom-dashboard-draw-ascii-banner-fn ()
   (let* ((banner

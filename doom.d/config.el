@@ -160,6 +160,7 @@
 ;; Elm
 (remove-hook 'elm-mode-hook 'elm-indent-mode)
 
+
 ;; Case insensitive search
 (custom-set-variables
  '(evil-ex-search-case 'insensitive))
@@ -180,8 +181,10 @@
     ;; more stuff here
     )
   (add-hook 'rustic-mode-hook 'rust-major-config))
+
 ;; Functions
 
+;; evil-ex-search
 (advice-add 'evil-ex-search-next :after
     (lambda (&rest _x) (evil-scroll-line-to-center (line-number-at-pos))))
 (advice-add 'evil-ex-search-previous :after
@@ -189,7 +192,6 @@
 
 ;; Mappings
 ;; TAB completion
-
 (with-eval-after-load 'company
     (define-key company-active-map (kbd "<tab>") 'company-complete-selection))
 (setq company-backends '(company-dabbrev-code))
@@ -238,6 +240,11 @@
     :desc "Show errors list"
     "l" #'flycheck-list-errors))
 
+;; fzf
+;; (map! :leader
+;;     "SPC" #'fzf-find-file)
+
+
 ;; Split
 (map! :leader
     (:desc "Split window vertically"
@@ -283,6 +290,52 @@
 (map! :n "o" #'+default/newline-below)
 (map! :n "O" #'+default/newline-above)
 
+;; Git merge confict
+(map! :leader
+        (:prefix ("g m" . "Merge conflict")
+        :desc "Next"
+        "j" #'smerge-next))
+
+(map! :leader
+        (:prefix ("g m" . "Merge conflict")
+        :desc "Previous"
+        "k" #'smerge-prev))
+
+(map! :leader
+        (:prefix ("g m" . "Merge conflict")
+        :desc "Next"
+        "n" #'smerge-next))
+
+(map! :leader
+        (:prefix ("g m" . "Merge conflict")
+        :desc "Previous"
+        "p" #'smerge-prev))
+
+(map! :leader
+        (:prefix ("g m" . "Merge conflict")
+        :desc "Accept all"
+        "a" #'smerge-keep-all))
+
+(map! :leader
+        (:prefix ("g m" . "Merge conflict")
+        :desc "Accept current"
+        "c" #'smerge-keep-current))
+
+(map! :leader
+        (:prefix ("g m" . "Merge conflict")
+        :desc "Accept base"
+        "b" #'smerge-keep-base))
+
+(map! :leader
+        (:prefix ("g m" . "Merge conflict")
+        :desc "Accept upper"
+        "u" #'smerge-keep-upper))
+
+(map! :leader
+        (:prefix ("g m" . "Merge conflict")
+        :desc "Accept lower"
+        "l" #'smerge-keep-lower))
+
 ;; re-map those, monkey patching global-set-key
 (map! :n "C-j" (kbd "Lzz"))
 (map! :n "C-k" (kbd "Hzz"))
@@ -304,3 +357,5 @@
                                    32)))
                "\n"))
      'face 'doom-dashboard-banner)))
+
+

@@ -160,6 +160,8 @@
 ;; Elm
 (remove-hook 'elm-mode-hook 'elm-indent-mode)
 
+;; Web mode https://stackoverflow.com/questions/51117964/how-to-remove-an-item-from-auto-mode-alist-emacs
+(add-to-list 'auto-mode-alist '("\\.[jt]s.\\'" . typescript-mode))
 
 ;; Case insensitive search
 (custom-set-variables

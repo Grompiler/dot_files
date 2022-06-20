@@ -349,7 +349,7 @@
   "Removes word under cursor when word is valid, otherwise removes char under cursor"
   (interactive)
   (if (looking-back "[a-zA-Z0-9_]")
-      ;; delete word if char behing cursor matches the above regex
+      ;; delete word if char behind cursor matches the above regex
         (backward-kill-word 1)
     ;; otherwise, just delete one char
     (backward-delete-char 1)))

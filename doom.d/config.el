@@ -344,6 +344,18 @@
 (map! :n "C-h" (kbd "^"))
 (map! :n "C-l" (kbd "$"))
 
+;; re-implement backward kill word
+(defun custom/backward-kill-word ()
+  "Removes word under cursor when word is valid, otherwise removes char under cursor"
+  (interactive)
+  (if (looking-back "[a-zA-Z0-9_]")
+      ;; delete word if char behing cursor matches the above regex
+        (backward-kill-word 1)
+    ;; otherwise, just delete one char
+    (backward-delete-char 1)))
+
+(global-set-key  [C-backspace] 'custom/backward-kill-word)
+
 ;; Simpler dashboard
 (defun doom-dashboard-draw-ascii-banner-fn ()
   (let* ((banner

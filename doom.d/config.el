@@ -143,7 +143,7 @@
         (insert (make-string spaces ? ))))
 (map! :i "TAB" #'custom/dumb-indent)
 
-
+;; customize code lens
 (custom-set-faces!
   '(flycheck-error :underline nil)
   '(flycheck-warning :underline nil)

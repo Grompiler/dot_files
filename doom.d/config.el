@@ -126,11 +126,23 @@
 (setq centaur-tabs-label-fixed-length 10)
 (setq centaur-tabs-set-bar 'over)
 
-;;
+;; always indent to 4 spaces in shift mode
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
-(setq tab-width 4)
-(setq-default doom/set-indent-width 4)
+(add-hook 'buffer-list-update-hook (lambda () (setq evil-shift-width 4)))
+;; (setq tab-width 4)
+;; (setq evil-shift-width 4)
+;; (setq-default doom/set-indent-width 4)
 (setq-default indent-tabs-mode nil)
+
+;; re-implement indent to always be 4 spaces in insert mode
+(defun custom/dumb-indent ()
+    "Insert spaces 4 tab-width."
+    (interactive)
+        (let* ((movement (% (current-column) 4))
+                (spaces (if (= 0 movement) 4 (- 4 movement))))
+        (insert (make-string spaces ? ))))
+(map! :i "TAB" #'custom/dumb-indent)
+
 
 (custom-set-faces!
   '(flycheck-error :underline nil)
@@ -287,8 +299,6 @@
 (map! :n "C-r" nil)
 (map! :n "U" #'evil-redo)
 
-(map! :i "TAB" #'doom/dumb-indent)
-
 (map! :n "o" #'+default/newline-below)
 (map! :n "O" #'+default/newline-above)
 
@@ -344,6 +354,7 @@
 (map! :n "C-h" (kbd "^"))
 (map! :n "C-l" (kbd "$"))
 
+
 ;; re-implement backward kill word
 (defun custom/backward-kill-word ()
   "Removes word under cursor when word is valid, otherwise removes char under cursor"
@@ -355,6 +366,8 @@
     (backward-delete-char 1)))
 
 (global-set-key  [C-backspace] 'custom/backward-kill-word)
+
+
 
 ;; Simpler dashboard
 (defun doom-dashboard-draw-ascii-banner-fn ()

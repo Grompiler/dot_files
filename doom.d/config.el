@@ -302,6 +302,14 @@
 (map! :n "o" #'+default/newline-below)
 (map! :n "O" #'+default/newline-above)
 
+;; re-bind (unbind) C-f and C-u
+(map! :i "C-f" (kbd ""))
+(map! :i "C-u" (kbd ""))
+(map! :n "C-f" (kbd ""))
+(map! :n "C-u" (kbd ""))
+(map! :v "C-f" (kbd ""))
+(map! :v "C-u" (kbd ""))
+
 ;; Git merge confict
 (map! :leader
         (:prefix ("g m" . "Merge conflict")

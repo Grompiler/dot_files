@@ -145,9 +145,9 @@
 
 ;; customize lsp/flycheck
 (custom-set-faces!
-  '(flycheck-error :underline nil)
-  '(flycheck-warning :underline nil)
-  '(flycheck-info :underline nil))
+    '(flycheck-error :underline nil)
+    '(flycheck-warning :underline nil)
+    '(flycheck-info :underline nil))
 
 (setq flycheck-mode-line-enable nil)
 (setq flycheck-check-syntax-automatically '(mode-enabled save))
@@ -357,16 +357,22 @@
 
 ;; re-implement backward kill word
 (defun custom/backward-kill-word ()
-  "Removes word under cursor when word is valid, otherwise removes char under cursor"
-  (interactive)
-  (if (looking-back "[a-zA-Z0-9_]")
-      ;; delete word if char behind cursor matches the above regex
+    "Removes word under cursor when word is valid, otherwise removes char under cursor"
+    (interactive)
+    (if (looking-back "[a-zA-Z0-9_]")
+        ;; delete word if char behind cursor matches the above regex
         (backward-kill-word 1)
-    ;; otherwise, just delete one char
-    (backward-delete-char 1)))
-
+        ;; otherwise, just delete one char/all spaces
+        (backward-delete-char 1)
+        ;; I am not sure about why this "if" is needed with my limited knowledge of elisp, but it works
+        (if (looking-back "\s")
+            (while (looking-back "\s")
+                (backward-delete-char 1)
+            )
+        )
+    )
+)
 (global-set-key  [C-backspace] 'custom/backward-kill-word)
-
 
 
 ;; Simpler dashboard

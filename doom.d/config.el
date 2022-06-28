@@ -169,8 +169,23 @@
 ;; Rust
 (add-hook 'rustic-mode-hook 'yas-minor-mode)
 
+(when (fboundp 'rustic-mode)
+  (defun rust-major-config ()
+    "For use in `rust-mode-hook'."
+    (local-set-key (kbd "C-c C-c C-e") 'rustic-cargo-expand)
+    ;; more stuff here
+    )
+  (add-hook 'rustic-mode-hook 'rust-major-config))
+
 ;; Elm
 (remove-hook 'elm-mode-hook 'elm-indent-mode)
+
+(when (fboundp 'elm-mode)
+  (defun elm-major-config ()
+    "For use in `elm-mode-hook'."
+    (local-set-key (kbd "C-c C-t") 'elm-test-project)
+    )
+  (add-hook 'elm-mode-hook 'elm-major-config))
 
 ;; Web mode https://stackoverflow.com/questions/51117964/how-to-remove-an-item-from-auto-mode-alist-emacs
 (add-to-list 'auto-mode-alist '("\\.[jt]s.\\'" . typescript-mode))
@@ -188,13 +203,6 @@
 (global-set-key (kbd "C-h") (kbd "^"))
 (global-set-key (kbd "C-l") (kbd "$"))
 
-(when (fboundp 'rustic-mode)
-  (defun rust-major-config ()
-    "For use in `rust-mode-hook'."
-    (local-set-key (kbd "C-c C-c C-e") 'rustic-cargo-expand)
-    ;; more stuff here
-    )
-  (add-hook 'rustic-mode-hook 'rust-major-config))
 
 ;; Functions
 

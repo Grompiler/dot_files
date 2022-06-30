@@ -191,8 +191,11 @@
 (add-to-list 'auto-mode-alist '("\\.[jt]s.\\'" . typescript-mode))
 
 ;; Case insensitive search
+;; Search for words not symbols
 (custom-set-variables
- '(evil-ex-search-case 'insensitive))
+ '(evil-ex-search-case 'insensitive)
+ '(evil-symbol-word-search nil))
+
 
 ;; Consider _ as part of the word
 (modify-syntax-entry ?_ "w")

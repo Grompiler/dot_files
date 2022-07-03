@@ -217,8 +217,12 @@
 
 ;; Mappings
 ;; TAB completion
+;; Enter does enter, it should not complete
 (with-eval-after-load 'company
-    (define-key company-active-map (kbd "<tab>") 'company-complete-selection))
+    (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
+    (define-key company-active-map [return] 'newline)
+    (define-key company-active-map (kbd "RET") 'newline))
+
 (setq company-backends '(company-dabbrev-code))
 (setq company-dabbrev-other-buffers nil)
 (map! :leader

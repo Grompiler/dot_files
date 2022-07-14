@@ -28,7 +28,10 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 
-(setq doom-theme 'doom-dracula)
+;; (setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-horizon)
+;; (setq doom-theme 'doom-earl-grey)
+;; (setq doom-theme 'doom-gruvbox)
 
 ;; (setq bg1 nil) ;; terminal is ugly
 
@@ -72,15 +75,22 @@
 ;; Font colors
 
 (custom-set-faces
- '(font-lock-variable-name-face ((t (:foreground "white"))))
- '(font-lock-builtin-face ((t (:foreground "#bd93f9"))))
- '(font-lock-negation-char-face ((t (:foreground "#bd93f9" :weight normal))))
- '(font-lock-type-face ((t (:foreground "#88eeff"))))
- ;; '(tree-sitter-hl-face:method\.call ((t (:inherit tree-sitter-hl-face:method\.call :forground "#50fa7b" :weight normal :slant normal))))
- '(tree-sitter-hl-face:operator ((t (:inherit tree-sitter-hl-face:keyword :foreground "#ffbb66"))))
- '(tree-sitter-hl-face:function\.call ((t (:inherit tree-sitter-hl-face:function\.call :foreground "#50fa7b" :weight normal :slant normal))))
+
+ ;; '(default ((t (:foreground "light gray"))))
+ ;; '(font-lock-variable-name-face ((t (:foreground "light grey"))))
+ ;; '(font-lock-builtin-face ((t (:foreground "#bd93f9"))))
+ '(font-lock-negation-char-face ((t (:weight normal))))
+ ;;dracula '(font-lock-negation-char-face ((t (:foreground "#bd93f9" :weight normal))))
+ ;; '(font-lock-type-face ((t (:foreground "#88eeff"))))
+ ;;dracula '(tree-sitter-hl-face:method\.call ((t (:inherit tree-sitter-hl-face:method\.call :forground "#50fa7b" :weight normal :slant normal))))
+ '(tree-sitter-hl-face:method\.call ((t (:inherit tree-sitter-hl-face:method\.call :weight normal :slant normal))))
+ ;;dracula '(tree-sitter-hl-face:operator ((t (:inherit tree-sitter-hl-face:keyword :foreground "#ffbb66"))))
+ '(tree-sitter-hl-face:operator ((t (:inherit tree-sitter-hl-face:keyword))))
+ ;;dracula '(tree-sitter-hl-face:function\.call ((t (:inherit tree-sitter-hl-face:function\.call :foreground "#50fa7b" :weight normal :slant normal))))
+ '(tree-sitter-hl-face:function\.call ((t (:inherit tree-sitter-hl-face:function\.call :weight normal :slant normal))))
  '(tree-sitter-hl-face:property ((t (:inherit font-lock-constant-face :slant normal))))
- '(font-lock-preprocessor-face ((t (:foreground "#50fa7b" :weight normal)))))
+ ;;dracula '(font-lock-preprocessor-face ((t (:foreground "#50fa7b" :weight normal)))))
+ '(font-lock-preprocessor-face ((t (:weight normal)))))
 
 ;; Magit
 ;; (global-display-line-numbers-mode t)
@@ -196,7 +206,6 @@
  '(evil-ex-search-case 'insensitive)
  '(evil-symbol-word-search nil))
 
-
 ;; Consider _ as part of the word
 (modify-syntax-entry ?_ "w")
 
@@ -208,12 +217,12 @@
 
 
 ;; Functions
-
 ;; evil-ex-search
 (advice-add 'evil-ex-search-next :after
     (lambda (&rest _x) (evil-scroll-line-to-center (line-number-at-pos))))
 (advice-add 'evil-ex-search-previous :after
     (lambda (&rest _x) (evil-scroll-line-to-center (line-number-at-pos))))
+
 
 ;; Mappings
 ;; TAB completion

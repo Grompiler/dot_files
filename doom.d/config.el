@@ -205,7 +205,6 @@
 
 ;; Case insensitive search
 ;; Search for words not symbols
-;; No tilde for empty lines
 (custom-set-variables
  '(evil-ex-search-case 'insensitive)
  '(evil-symbol-word-search nil))

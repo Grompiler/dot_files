@@ -79,6 +79,7 @@
  ;; '(default ((t (:foreground "light gray"))))
  ;; '(font-lock-variable-name-face ((t (:foreground "light grey"))))
  ;; '(font-lock-builtin-face ((t (:foreground "#bd93f9"))))
+ '(fringe ((t (:foreground "dim gray"))))
  '(font-lock-negation-char-face ((t (:weight normal))))
  ;;dracula '(font-lock-negation-char-face ((t (:foreground "#bd93f9" :weight normal))))
  ;; '(font-lock-type-face ((t (:foreground "#88eeff"))))
@@ -103,6 +104,7 @@
  '(diff-refine-removed ((t (:inherit diff-removed :background "#ff5555" :foreground "nil" :inverse-video t :weight ultrabold))))
  '(magit-diff-removed ((t (:extend t :foreground "#cc4444" :background nil))))
  '(magit-diff-removed-highlight ((t (:extend t :foreground "#cc4444" :background nil)))))
+
 
 ;; Which Key
 (setq which-key-idle-delay 3)
@@ -139,6 +141,7 @@
 ;; always indent to 4 spaces in shift mode
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 (add-hook 'buffer-list-update-hook (lambda () (setq evil-shift-width 4)))
+
 ;; (setq tab-width 4)
 ;; (setq evil-shift-width 4)
 ;; (setq-default doom/set-indent-width 4)
@@ -202,9 +205,11 @@
 
 ;; Case insensitive search
 ;; Search for words not symbols
+;; No tilde for empty lines
 (custom-set-variables
  '(evil-ex-search-case 'insensitive)
  '(evil-symbol-word-search nil))
+
 
 ;; Consider _ as part of the word
 (modify-syntax-entry ?_ "w")
@@ -422,5 +427,3 @@
                                    32)))
                "\n"))
      'face 'doom-dashboard-banner)))
-
-

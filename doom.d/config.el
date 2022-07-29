@@ -190,6 +190,7 @@
     )
   (add-hook 'rustic-mode-hook 'rust-major-config))
 
+
 ;; Elm
 (remove-hook 'elm-mode-hook 'elm-indent-mode)
 
@@ -225,6 +226,12 @@
 (advice-add 'evil-ex-search-next :after
     (lambda (&rest _x) (evil-scroll-line-to-center (line-number-at-pos))))
 (advice-add 'evil-ex-search-previous :after
+    (lambda (&rest _x) (evil-scroll-line-to-center (line-number-at-pos))))
+
+;; compilation mode
+(advice-add 'compilation-next-error :after
+    (lambda (&rest _x) (evil-scroll-line-to-center (line-number-at-pos))))
+(advice-add 'compilation-previous-error :after
     (lambda (&rest _x) (evil-scroll-line-to-center (line-number-at-pos))))
 
 
@@ -384,12 +391,12 @@
         :desc "Accept lower"
         "l" #'smerge-keep-lower))
 
+
 ;; re-map those, monkey patching global-set-key
 (map! :n "C-j" (kbd "Lzz"))
 (map! :n "C-k" (kbd "Hzz"))
 (map! :n "C-h" (kbd "^"))
 (map! :n "C-l" (kbd "$"))
-
 
 ;; re-implement backward kill word
 (defun custom/backward-kill-word ()

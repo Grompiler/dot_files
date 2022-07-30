@@ -72,6 +72,15 @@
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
 ;; Custom settings
+;; Evil goggles
+(use-package evil-goggles
+  :ensure t
+  :config
+  (evil-goggles-mode)
+  (evil-goggles-use-diff-refine-faces))
+
+(setq evil-goggles-enable-delete t)
+
 ;; Font colors
 
 (custom-set-faces

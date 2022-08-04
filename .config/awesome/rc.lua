@@ -80,7 +80,7 @@ local altkey       = "Mod1"
 local terminal     = "alacritty"
 local editor       = "nano" --or os.getenv("EDITOR")
 local browser      = "firefox-developer-edition"
-local guieditor    = "code"
+local guieditor    = "emacs"
 local scrlocker    = "slock"
 local explorer     = "thunar"
 

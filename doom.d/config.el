@@ -115,6 +115,9 @@
  '(magit-diff-removed-highlight ((t (:extend t :foreground "#cc4444" :background nil)))))
 
 
+;; evil-snipe
+(setq evil-snipe-spillover-scope 'visible)
+
 ;; Which Key
 (setq which-key-idle-delay 3)
 (which-key-setup-minibuffer)

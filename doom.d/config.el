@@ -191,6 +191,7 @@
 
 (setq evil-want-fine-undo t)
 
+
 ;; Rust
 (add-hook 'rustic-mode-hook 'yas-minor-mode)
 
@@ -215,6 +216,10 @@
 
 ;; Web mode https://stackoverflow.com/questions/51117964/how-to-remove-an-item-from-auto-mode-alist-emacs
 (add-to-list 'auto-mode-alist '("\\.[jt]s.\\'" . typescript-mode))
+
+;; Dired
+(setq delete-by-moving-to-trash t
+      trash-directory "~/.local/share/Trash/files/")
 
 ;; Case insensitive search
 ;; Search for words not symbols

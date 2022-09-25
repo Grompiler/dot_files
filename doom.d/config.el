@@ -29,9 +29,9 @@
 ;; `load-theme' function. This is the default:
 
 ;; (setq doom-theme 'doom-dracula)
-(setq doom-theme 'doom-horizon)
+;; (setq doom-theme 'doom-horizon)
 ;; (setq doom-theme 'doom-earl-grey)
-;; (setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-gruvbox)
 
 ;; (setq bg1 nil) ;; terminal is ugly
 
@@ -227,6 +227,10 @@
  '(evil-ex-search-case 'insensitive)
  '(evil-symbol-word-search nil))
 
+;;Cursor
+(setq evil-normal-state-cursor '(box "medium sea green")
+    evil-insert-state-cursor '(bar "medium sea green")
+    evil-visual-state-cursor '(hollow "medium sea green"))
 
 ;; Consider _ as part of the word
 (modify-syntax-entry ?_ "w")

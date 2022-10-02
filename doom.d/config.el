@@ -255,6 +255,12 @@
 (advice-add 'compilation-previous-error :after
     (lambda (&rest _x) (evil-scroll-line-to-center (line-number-at-pos))))
 
+;; in out motions center
+(advice-add 'better-jumper-jump-forward :after
+    (lambda (&rest _x) (evil-scroll-line-to-center (line-number-at-pos))))
+(advice-add 'better-jumper-jump-backward :after
+    (lambda (&rest _x) (evil-scroll-line-to-center (line-number-at-pos))))
+
 
 ;; Mappings
 ;; TAB completion

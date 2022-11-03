@@ -270,6 +270,7 @@
     (define-key company-active-map [return] 'newline)
     (define-key company-active-map (kbd "RET") 'newline))
 
+
 (setq company-backends '(company-dabbrev-code))
 (setq company-dabbrev-other-buffers nil)
 (map! :leader
@@ -330,6 +331,11 @@
     (:desc "Split window horizontally"
     "w-" #'evil-window-split))
 
+;; Workspace
+(map! :leader
+    (:desc "Delete workspace"
+    "Wd" #'+workspace/delete))
+
 ;; Switch buffers
 (map! :leader
     (:desc "Last buffer"
@@ -352,7 +358,6 @@
 
 ;; git refresh branch
 (map! :leader
-
       (:desc "Update buffer's branch"
        "g ;" #'vc-refresh-state))
 

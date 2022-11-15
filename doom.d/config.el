@@ -260,6 +260,13 @@
       :leader
       "c :" 'recompile)
 
+;; Change evil-state-map
+(map! :map evil-normal-state-map
+    "g d" 'evil-goto-definition)
+
+(map! :map evil-visual-state-map
+    "g d" 'evil-goto-definition)
+
 ;; Compilation buffer
 (map! :map compilation-mode-map
       :n

@@ -85,6 +85,7 @@
 
 (custom-set-faces
 
+ '(evil-goggles-yank-face ((t (:background "medium sea green"))))
  ;; '(default ((t (:foreground "light gray"))))
  ;; '(font-lock-variable-name-face ((t (:foreground "light grey"))))
  ;; '(font-lock-builtin-face ((t (:foreground "#bd93f9"))))

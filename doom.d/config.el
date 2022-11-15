@@ -191,26 +191,122 @@
 
 (setq evil-want-fine-undo t)
 
+;; Unbind general-override-mode-map
+(map! :map general-override-mode-map
+      :leader
+      "c d" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c D" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c E" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c J" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c w" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c W" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c a" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c f" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c i" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c j" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c l" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c o" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c s" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c x" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c e" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c k" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c r" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c t" nil)
+
+;; Compilation buffer
+(map! :map compilation-mode-map
+      :n
+      "C-j" (kbd "Lzz"))
+(map! :map compilation-mode-map
+      :n
+      "C-k" (kbd "Hzz"))
+(map! :map compilation-mode-map
+      "TAB" nil)
 
 ;; Rust
-(add-hook 'rustic-mode-hook 'yas-minor-mode)
-
 (when (fboundp 'rustic-mode)
   (defun rust-major-config ()
     "For use in `rust-mode-hook'."
-    (local-set-key (kbd "C-c C-c C-e") 'rustic-cargo-expand)
-    ;; more stuff here
+    (setq rustic-mode-map (make-sparse-keymap))
+    (map! :map rustic-mode-map
+        :leader
+        :desc "cargo build"
+        "c b" 'rustic-cargo-build)
+    (map! :map rustic-mode-map
+        :leader
+        :desc "cargo run"
+        "c r" 'rustic-cargo-run)
+    (map! :map rustic-mode-map
+        :leader
+        :desc "cargo check"
+        "c k" 'rustic-cargo-check)
+    (map! :map rustic-mode-map
+        :leader
+        :desc "cargo clippy"
+        "c K" 'rustic-cargo-clippy)
+    (map! :map rustic-mode-map
+        :leader
+        :desc "cargo test"
+        "c t" 'rustic-cargo-test)
+    (map! :map rustic-mode-map
+        :leader
+        :desc "cargo expand"
+        "c e" 'rustic-cargo-expand)
     )
   (add-hook 'rustic-mode-hook 'rust-major-config))
 
-
 ;; Elm
 (remove-hook 'elm-mode-hook 'elm-indent-mode)
-
 (when (fboundp 'elm-mode)
   (defun elm-major-config ()
     "For use in `elm-mode-hook'."
-    (local-set-key (kbd "C-c C-t") 'elm-test-project)
+    (setq elm-mode-map (make-sparse-keymap))
+    (map! :map elm-mode-map
+        :leader
+        :desc "elm compile buffer"
+        "c b" 'elm-compile-buffer)
+    (map! :map elm-mode-map
+        :leader
+        :desc "elm test project"
+        "c t" 'elm-test-project)
+    (map! :map elm-mode-map
+        :leader
+        :desc "elm compile main"
+        "c m" 'elm-compile-main)
     )
   (add-hook 'elm-mode-hook 'elm-major-config))
 

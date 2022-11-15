@@ -258,6 +258,7 @@
       "TAB" nil)
 
 ;; Rust
+(add-hook 'rustic-mode-hook 'yas-minor-mode)
 (when (fboundp 'rustic-mode)
   (defun rust-major-config ()
     "For use in `rust-mode-hook'."

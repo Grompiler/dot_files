@@ -246,7 +246,19 @@
       "c r" nil)
 (map! :map general-override-mode-map
       :leader
+      "c c" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c C" nil)
+(map! :map general-override-mode-map
+      :leader
       "c t" nil)
+(map! :map general-override-mode-map
+      :leader
+      "c ;" 'compile)
+(map! :map general-override-mode-map
+      :leader
+      "c :" 'recompile)
 
 ;; Compilation buffer
 (map! :map compilation-mode-map
@@ -267,7 +279,7 @@
     (map! :map rustic-mode-map
         :leader
         :desc "cargo build"
-        "c b" 'rustic-cargo-build)
+        "c c" 'rustic-cargo-build)
     (map! :map rustic-mode-map
         :leader
         :desc "cargo run"
@@ -300,7 +312,7 @@
     (map! :map elm-mode-map
         :leader
         :desc "elm compile buffer"
-        "c b" 'elm-compile-buffer)
+        "c c" 'elm-compile-buffer)
     (map! :map elm-mode-map
         :leader
         :desc "elm test project"

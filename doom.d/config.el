@@ -253,12 +253,17 @@
 (map! :map general-override-mode-map
       :leader
       "c t" nil)
+
+;; Change evil-state-map
 (map! :map general-override-mode-map
       :leader
       "c ;" 'compile)
 (map! :map general-override-mode-map
       :leader
       "c :" 'recompile)
+(map! :map general-override-mode-map
+      :leader
+      "k k" 'kill-current-buffer)
 
 ;; Change evil-state-map
 (map! :map evil-normal-state-map
@@ -479,7 +484,6 @@
        "g ;" #'vc-refresh-state))
 
 ;; others
-(map! :n "C-d" #'evil-delete-buffer)
 (map! :n "C-r" nil)
 (map! :n "U" #'evil-redo)
 

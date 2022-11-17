@@ -254,7 +254,7 @@
       :leader
       "c t" nil)
 
-;; Change evil-state-map
+;; Change general-override-mode-map
 (map! :map general-override-mode-map
       :leader
       "c ;" 'compile)

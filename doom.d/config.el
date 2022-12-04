@@ -284,14 +284,28 @@
 
 ;; Rust
 (add-hook 'rustic-mode-hook 'yas-minor-mode)
+
+;;;###autoload
+(defun rustic-cargo-build-no-warnings ()
+  "Run 'cargo build without warning'."
+  (interactive)
+  (rustic-run-cargo-command `(,(rustic-cargo-bin)
+                              "rustc"
+                              ,@(split-string "-- -Awarnings"))
+                              (list :clippy-fix t)))
+
 (when (fboundp 'rustic-mode)
   (defun rust-major-config ()
     "For use in `rust-mode-hook'."
     (setq rustic-mode-map (make-sparse-keymap))
     (map! :map rustic-mode-map
         :leader
+        :desc "cargo build -- -Awarnings"
+        "c c" 'rustic-cargo-build-no-warnings)
+    (map! :map rustic-mode-map
+        :leader
         :desc "cargo build"
-        "c c" 'rustic-cargo-build)
+        "c C" 'rustic-cargo-build)
     (map! :map rustic-mode-map
         :leader
         :desc "cargo run"

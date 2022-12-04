@@ -285,14 +285,41 @@
 ;; Rust
 (add-hook 'rustic-mode-hook 'yas-minor-mode)
 
+(defvar rustic-build-process-name "rustic-cargo-build-process"
+  "Process name for build processes.")
+
+(defvar rustic-build-buffer-name "*cargo-build*"
+  "Buffer name for build buffers.")
+
+(defvar rustic-build-arguments ""
+  "Holds arguments for 'cargo build', similar to `compilation-arguments`.")
+
+(define-derived-mode rustic-cargo-build-mode rustic-compilation-mode "cargo-build"
+  :group 'rustic)
+
 ;;;###autoload
-(defun rustic-cargo-build-no-warning ()
-  "Run 'cargo rustc -- -Awarnings'."
-  (interactive)
-  (rustic-run-cargo-command `(,(rustic-cargo-bin)
-                              "rustc"
-                              ,@(split-string "-- -Awarnings"))
-                              (list :clippy-fix t)))
+(defun custom/rustic-cargo-build (&optional arg)
+  "Run 'cargo build'.
+
+    If ARG is not nil, use value as argument and store it in
+    `rustic-build-arguments'.  When calling this function from
+    `rustic-popup-mode', always use the value of
+    `rustic-build-arguments'."
+    (interactive "P")
+    (rustic-cargo-build-command
+    (cond (arg
+        (setq rustic-build-arguments (read-from-minibuffer "Cargo build arguments: " rustic-build-arguments)))
+        (t ""))))
+
+(defun rustic-cargo-build-command (&optional build-args)
+    "Start compilation process for 'cargo build' with optional build-ARGS."
+    (rustic-compilation-process-live)
+    (let* ((command (list (rustic-cargo-bin) "build"))
+            (c (append command (split-string (if build-args build-args ""))))
+            (buf rustic-build-buffer-name)
+            (proc rustic-build-process-name)
+            (mode 'rustic-cargo-build-mode))
+        (rustic-compilation c (list :buffer buf :process proc :mode mode))))
 
 (when (fboundp 'rustic-mode)
   (defun rust-major-config ()
@@ -300,12 +327,8 @@
     (setq rustic-mode-map (make-sparse-keymap))
     (map! :map rustic-mode-map
         :leader
-        :desc "cargo build without warning"
-        "c c" 'rustic-cargo-build-no-warning)
-    (map! :map rustic-mode-map
-        :leader
         :desc "cargo build"
-        "c C" 'rustic-cargo-build)
+        "c c" 'custom/rustic-cargo-build)
     (map! :map rustic-mode-map
         :leader
         :desc "cargo run"

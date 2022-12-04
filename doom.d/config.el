@@ -286,8 +286,8 @@
 (add-hook 'rustic-mode-hook 'yas-minor-mode)
 
 ;;;###autoload
-(defun rustic-cargo-build-no-warnings ()
-  "Run 'cargo build without warning'."
+(defun rustic-cargo-build-no-warning ()
+  "Run 'cargo rustc -- -Awarnings'."
   (interactive)
   (rustic-run-cargo-command `(,(rustic-cargo-bin)
                               "rustc"
@@ -300,8 +300,8 @@
     (setq rustic-mode-map (make-sparse-keymap))
     (map! :map rustic-mode-map
         :leader
-        :desc "cargo build -- -Awarnings"
-        "c c" 'rustic-cargo-build-no-warnings)
+        :desc "cargo build without warning"
+        "c c" 'rustic-cargo-build-no-warning)
     (map! :map rustic-mode-map
         :leader
         :desc "cargo build"

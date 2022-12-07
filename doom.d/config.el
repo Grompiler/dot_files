@@ -152,7 +152,6 @@
 (setq centaur-tabs-set-bar 'over)
 
 ;; always indent to 4 spaces in shift mode
-(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 (add-hook 'buffer-list-update-hook (lambda () (setq evil-shift-width 4)))
 
 ;; (setq tab-width 4)

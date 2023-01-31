@@ -534,7 +534,17 @@
 (map! :v "C-f" (kbd ""))
 (map! :v "C-u" (kbd ""))
 
-;; Git merge confict
+;; Git
+(map! :leader
+        (:prefix ("j" . "Jump")
+        :desc "Next Change"
+        "c" #'+vc-gutter/next-hunk))
+
+(map! :leader
+        (:prefix ("j" . "Jump")
+        :desc "Previous Change"
+        "C" #'+vc-gutter/previous-hunk))
+
 (map! :leader
         (:prefix ("g m" . "Merge conflict")
         :desc "Next"

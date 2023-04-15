@@ -320,6 +320,45 @@
             (mode 'rustic-cargo-build-mode))
         (rustic-compilation c (list :buffer buf :process proc :mode mode))))
 
+;;;###autoload
+(defun custom/rustic-cargo-tarpaulin (&optional arg)
+  "Run 'cargo tarpaulin'."
+
+    (interactive "P")
+    (custom/cargo-tarpaulin-build-command)
+    (cond (arg
+        (setq rustic-test-arguments (read-from-minibuffer "Cargo tarpaulin arguments: " )))
+        (t "")))
+
+(defun custom/cargo-tarpaulin-build-command (&optional _arg)
+    "Start compilation process for 'cargo tarpaulin'."
+    (rustic-compilation-process-live)
+    (let* ((command (list (rustic-cargo-bin) "tarpaulin"))
+            (c (append command (split-string (if "" "" ""))))
+            (buf rustic-test-buffer-name)
+            (proc rustic-test-process-name)
+            (mode 'rustic-cargo-test-mode))
+        (rustic-compilation c (list :buffer buf :process proc :mode mode))))
+
+;;;###autoload
+(defun custom/rustic-cargo-tarpaulin-html (&optional arg)
+  "Run 'cargo tarpaulin -o html'."
+
+    (interactive "P")
+    (custom/cargo-tarpaulin-html-build-command
+    (cond (arg
+        (setq rustic-test-arguments (read-from-minibuffer "Cargo tarpaulin html arguments: " )))
+        (t ""))))
+(defun custom/cargo-tarpaulin-html-build-command (&optional _arg)
+    "Start compilation process for 'cargo tarpaulin'."
+    (rustic-compilation-process-live)
+    (let* ((command (list (rustic-cargo-bin) "tarpaulin"))
+            (c (append command (split-string (if "-o html" "-o html" ""))))
+            (buf rustic-test-buffer-name)
+            (proc rustic-test-process-name)
+            (mode 'rustic-cargo-test-mode))
+        (rustic-compilation c (list :buffer buf :process proc :mode mode))))
+
 (when (fboundp 'rustic-mode)
   (defun rust-major-config ()
     "For use in `rust-mode-hook'."
@@ -344,6 +383,14 @@
         :leader
         :desc "cargo test"
         "c t" 'rustic-cargo-test)
+    (map! :map rustic-mode-map
+        :leader
+        :desc "cargo test coverage"
+        "c T" 'custom/rustic-cargo-tarpaulin)
+    (map! :map rustic-mode-map
+        :leader
+        :desc "cargo test coverage html"
+        "c h" 'custom/rustic-cargo-tarpaulin-html)
     (map! :map rustic-mode-map
         :leader
         :desc "cargo expand"

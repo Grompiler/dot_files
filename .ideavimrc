@@ -25,6 +25,8 @@ map <leader>/ <Action>(FindInPath)
 inoremap <C-j> <C-n>
 inoremap <C-k> <C-p>
 
+"IdeaVim-Sneak
+set sneak
 
 " Unmaps
 noremap <up> <nop>
@@ -69,11 +71,6 @@ map <leader><leader>k <nop>
 map <leader><leader>n <nop>
 map <leader><leader>N <nop>
 map <leader><leader>s <nop>
-
-map f <Plug>(easymotion-fl)
-map F <Plug>(easymotion-Fl)
-map t <Plug>(easymotion-tl)
-map T <Plug>(easymotion-Tl)
 
 " Actions, prefix = leader a
 map <leader>ar <Action>(RenameElement)

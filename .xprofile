@@ -1,1 +1,1 @@
-xrandr --output DP-2 --mode 2560x1440 --rate 143.91 && xrandr --output DP-0 --mode 1920x1080 --rate 239.76
+xrandr --output DP-2 --mode 2560x1440 --rate 143.91 && xrandr --output DP-0 --mode 1920x1080 --rate 239.76 && xrandr --output DP-2 --right-of DP-0

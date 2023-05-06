@@ -19,6 +19,8 @@ map * *zz
 map # #zz
 map <leader>; <Action>(CommentByLineComment)
 map <leader>/ <Action>(FindInPath)
+map + <Action>(StretchSplitToRight)
+map - <Action>(StretchSplitToLeft)
 "map <leader>* <Action>(CommentByLineComment)
 
 " Menus navigation
@@ -155,6 +157,8 @@ set smartcase
 map <leader>w/ <Action>(SplitVertically)
 map <leader>w_ <Action>(SplitHorizontally)
 map <leader>wm <Action>(MaximizeEditorInSplit)
+map <leader>ww <Action>(StretchSplitToRight)
+map <leader>we <Action>(StretchSplitToLeft)
 
 map <leader>wj <C-w>j
 map <leader>wk <C-w>k

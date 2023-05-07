@@ -93,6 +93,7 @@ map <leader>cc <Action>(Cargo.RunCargoCommand)
 "map <leader>ce <Action>()
 map <leader>cr <Action>(ActivateRunToolWindow)
 map <leader>cb <Action>(ActivateBuildToolWindow)
+map <leader>cd <Action>(ActivateDebugToolWindow)
 "map <leader>cT <Action>()
 
 " Debugger, prefix = leader d

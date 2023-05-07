@@ -19,8 +19,8 @@ map * *zz
 map # #zz
 map <leader>; <Action>(CommentByLineComment)
 map <leader>/ <Action>(FindInPath)
-map + <Action>(StretchSplitToRight)
-map - <Action>(StretchSplitToLeft)
+nmap + <Action>(StretchSplitToRight)
+nmap - <Action>(StretchSplitToLeft)
 "map <leader>* <Action>(CommentByLineComment)
 
 " Menus navigation
@@ -96,8 +96,16 @@ map <leader>cb <Action>(ActivateBuildToolWindow)
 "map <leader>cT <Action>()
 
 " Debugger, prefix = leader d
-map <leader>dd <Action>(Debug)
+map <leader>dc <Action>(Resume)
 map <leader>db <Action>(ToggleLineBreakpoint)
+map <leader>dd <Action>(Debug)
+map <leader>de <Action>(EvaluateExpression)
+map <leader>di <Action>(StepInto)
+map <leader>do <Action>(StepOut)
+map <leader>dr <Action>(Run)
+map <leader>dR <Action>(Rerun)
+map <leader>ds <Action>(StepOver)
+map <leader>dS <Action>(Stop)
 
 " Errors, prefix = leader e
 map <leader>en <Action>(GotoNextError)
@@ -165,7 +173,9 @@ map <leader>wk <C-w>k
 map <leader>wh <C-w>h
 map <leader>wl <C-w>l
 
-map <leader>wd <Action>(HideActiveWindow)
+map <leader>wd <Action>(HideAllWindows)
+map <leader>wD <Action>(HideActiveWindow)
+
 
 
 " Highlight copied text

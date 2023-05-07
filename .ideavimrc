@@ -19,8 +19,8 @@ map * *zz
 map # #zz
 map <leader>; <Action>(CommentByLineComment)
 map <leader>/ <Action>(FindInPath)
-nmap + <Action>(StretchSplitToRight)
-nmap - <Action>(StretchSplitToLeft)
+map + <Action>(StretchSplitToRight)
+map - <Action>(StretchSplitToLeft)
 "map <leader>* <Action>(CommentByLineComment)
 
 " Menus navigation

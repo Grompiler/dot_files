@@ -87,6 +87,7 @@ map <leader>ml <Action>(ShowBookmarks)
 " Buffers, prefix = leader b
 map <leader>bk <Action>(CloseEditor)
 map <leader>bb <Action>(Switcher)
+map <leader>bs <Action>(NewScratchFile)
 
 " Compiler, prefix = leader c
 map <leader>cc <Action>(Cargo.RunCargoCommand)

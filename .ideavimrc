@@ -21,6 +21,7 @@ map <leader>; <Action>(CommentByLineComment)
 map <leader>/ <Action>(FindInPath)
 map + <Action>(StretchSplitToRight)
 map - <Action>(StretchSplitToLeft)
+EditorPreviousWordWithSelection
 "map <leader>* <Action>(CommentByLineComment)
 
 " Menus navigation
@@ -93,10 +94,10 @@ map <leader>bs <Action>(NewScratchFile)
 map <leader>cc <Action>(Cargo.RunCargoCommand)
 "map <leader>ce <Action>()
 map <leader>cr <Action>(ActivateRunToolWindow)
+map <leader>ct <Action>(ActivateRunToolWindow)
 map <leader>cb <Action>(ActivateBuildToolWindow)
 map <leader>cd <Action>(ActivateDebugToolWindow)
 map <leader>cv <Action>(ActivateCoverageToolWindow)
-"map <leader>cT <Action>()
 
 " Debugger/Runner, prefix = leader d
 map <leader>dr <Action>(Run)
@@ -138,9 +139,11 @@ map <leader>gv <Action>(Vcs.QuickListPopupAction)
 " Jumps, prefix = leader j
 map <leader>jc <Action>(VcsShowNextChangeMarker)
 map <leader>jC <Action>(VcsShowPrevChangeMarker)
+map <leader>jl <Action>(GotoLine)
 
 map <leader>jj <Plug>(easymotion-f)
 map <leader>jk <Plug>(easymotion-F)
+
 
 " Kill, prefix = leader k
 "map <leader>kk <Action>(CloseEditor)

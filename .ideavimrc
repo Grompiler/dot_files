@@ -21,7 +21,6 @@ map <leader>; <Action>(CommentByLineComment)
 map <leader>/ <Action>(FindInPath)
 map + <Action>(StretchSplitToRight)
 map - <Action>(StretchSplitToLeft)
-EditorPreviousWordWithSelection
 "map <leader>* <Action>(CommentByLineComment)
 
 " Menus navigation

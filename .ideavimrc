@@ -127,6 +127,7 @@ map <leader>zz <Action>(ExpandCollapseToggleAction)
 
 " Git, prefix = leader g
 map <leader>gg <Action>(VcsGroups)
+map <leader>ga <Action>(Git.Add)
 map <leader>gu <Action>(Git.Pull)
 map <leader>gb <Action>(Git.Branches)
 map <leader>gc <Action>(CheckinProject)

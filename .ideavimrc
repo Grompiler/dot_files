@@ -88,7 +88,8 @@ map <leader>bk <Action>(CloseEditor)
 map <leader>bb <Action>(Switcher)
 map <leader>bs <Action>(NewScratchFile)
 
-" Compiler, prefix = leader c
+" Compiler/Commands, prefix = leader c
+map <leader>c; <Action>(RunAnything)
 map <leader>cc <Action>(Cargo.RunCargoCommand)
 "map <leader>ce <Action>()
 map <leader>cr <Action>(ActivateRunToolWindow)

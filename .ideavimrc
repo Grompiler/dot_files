@@ -76,7 +76,6 @@ map <leader><leader>s <nop>
 
 " Actions, prefix = leader a
 map <leader>ar <Action>(RenameElement)
-map <leader>ae <Action>(EditorSelectWord)
 map <leader>af <Action>(ReformatCode)
 
 " Bookmarks, prefix = leader m
@@ -131,9 +130,13 @@ map <leader>ga <Action>(Git.Add)
 map <leader>gu <Action>(Git.Pull)
 map <leader>gb <Action>(Git.Branches)
 map <leader>gc <Action>(CheckinProject)
+map <leader>gl <Action>(Vcs.Show.Log)
 map <leader>gp <Action>(Vcs.Push)
+map <leader>gh <Action>(Vcs.ShowTabbedFileHistory)
+map <leader>gH <Action>(Vcs.ShowHistoryForBlock)
 map <leader>gs <Action>(ActivateCommitToolWindow)
 map <leader>gv <Action>(Vcs.QuickListPopupAction)
+
 
 
 " Jumps, prefix = leader j

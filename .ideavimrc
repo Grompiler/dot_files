@@ -103,9 +103,11 @@ map <leader>dr <Action>(Run)
 map <leader>dR <Action>(Rerun)
 map <leader>dd <Action>(Debug)
 map <leader>dc <Action>(Resume)
+map <leader>dC <Action>(RunClass)
 map <leader>db <Action>(ToggleLineBreakpoint)
 map <leader>dS <Action>(Stop)
 map <leader>dv <Action>(Coverage)
+map <leader>dV <Action>(RunCoverage)
 map <leader>ds <Action>(StepOver)
 map <leader>di <Action>(StepInto)
 map <leader>do <Action>(StepOut)
@@ -129,14 +131,17 @@ map <leader>zz <Action>(ExpandCollapseToggleAction)
 map <leader>gg <Action>(VcsGroups)
 map <leader>ga <Action>(Git.Add)
 map <leader>gu <Action>(Git.Pull)
+map <leader>gd <Action>(Compare.SameVersion)
 map <leader>gb <Action>(Git.Branches)
 map <leader>gc <Action>(CheckinProject)
 map <leader>gl <Action>(Vcs.Show.Log)
 map <leader>gp <Action>(Vcs.Push)
 map <leader>gh <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>gH <Action>(Vcs.ShowHistoryForBlock)
+map <leader>gr <Action>(Vcs.RollbackChangedLines)
 map <leader>gs <Action>(ActivateCommitToolWindow)
 map <leader>gv <Action>(Vcs.QuickListPopupAction)
+
 
 
 
@@ -158,6 +163,8 @@ map <leader>kk <Action>(CloseContent)
 map <leader>ot <Action>(ActivateTerminalToolWindow)
 map <leader>op <Action>(ActivateProjectToolWindow)
 map <leader>os <Action>(ActivateStructureToolWindow)
+map <leader>or <Action>(ActivateFindToolWindow)
+
 
 " Project, prefix = leader p
 map <leader>pi <Action>(InvalidateCaches)

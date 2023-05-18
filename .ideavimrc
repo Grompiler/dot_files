@@ -125,6 +125,7 @@ map <leader>ff <Action>(GotoFile)
 
 " Folding, prefix = leader z
 map <leader>za <Action>(CollapseAllRegions)
+map <leader>zA <Action>(ExpandAllRegions)
 map <leader>zs <Action>(CollapseSelection)
 map <leader>zz <Action>(ExpandCollapseToggleAction)
 

@@ -77,6 +77,7 @@ map <leader><leader>s <nop>
 " Actions, prefix = leader a
 map <leader>ar <Action>(RenameElement)
 map <leader>af <Action>(ReformatCode)
+map <leader>ac <Action>(CompareClipboardWithSelection)
 
 " Bookmarks, prefix = leader m
 map <leader>mm <Action>(ToggleBookmark)
@@ -142,9 +143,6 @@ map <leader>gr <Action>(Vcs.RollbackChangedLines)
 map <leader>gs <Action>(ActivateCommitToolWindow)
 map <leader>gv <Action>(Vcs.QuickListPopupAction)
 
-
-
-
 " Jumps, prefix = leader j
 map <leader>jc <Action>(VcsShowNextChangeMarker)
 map <leader>jC <Action>(VcsShowPrevChangeMarker)
@@ -155,7 +153,6 @@ map <leader>jk <Plug>(easymotion-F)
 
 
 " Kill, prefix = leader k
-"map <leader>kk <Action>(CloseEditor)
 map <leader>kk <Action>(CloseContent)
 
 

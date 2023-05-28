@@ -30,8 +30,6 @@ vim.opt.cursorline = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.autochdir = true
-
 -- Set proper options for every new buffer, see :verb set formatoptions
 vim.cmd([[autocmd BufEnter * set formatoptions-=cro]])
 

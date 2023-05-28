@@ -36,7 +36,8 @@ vim.keymap.set({ "n", "v" }, "<leader>bs", "<cmd>vsplit scratch<cr>", { desc = "
 
 -- Cargo
 vim.keymap.set("n", "<leader>cb", "<cmd>vsplit | terminal cargo build<cr>", { desc = "Cargo Build" })
-vim.keymap.set("n", "<leader>cc", "<cmd>vsplit | terminal cargo run<cr>", { desc = "Cargo Run" })
+vim.keymap.set("n", "<leader>cc", "<cmd>vsplit | terminal cargo build<cr>", { desc = "Cargo compile" })
+vim.keymap.set("n", "<leader>cr", "<cmd>vsplit | terminal cargo run<cr>", { desc = "Cargo Run" })
 vim.keymap.set("n", "<leader>ct", "<cmd>vsplit | terminal cargo test<cr>", { desc = "Cargo Test" })
 vim.keymap.set("n", "<leader>ck", "<cmd>vsplit | terminal cargo check<cr>", { desc = "Cargo check" })
 vim.keymap.set("n", "<leader>cK", "<cmd>vsplit | terminal cargo clippy<cr>", { desc = "Cargo clippy check" })

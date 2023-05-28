@@ -62,4 +62,8 @@ return require('packer').startup(function(use)
     use {
         "windwp/nvim-autopairs",
     }
+    use {
+        'phaazon/hop.nvim',
+        branch = 'v2', -- optional but strongly recommended
+    }
 end)

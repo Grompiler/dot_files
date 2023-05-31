@@ -8,7 +8,7 @@ vim.keymap.set('n', '<leader>*', builtin.grep_string, {})
 vim.keymap.set('n', '<leader>bb', builtin.buffers, {})
 
 -- Errors
-vim.keymap.set('n', '<leader>el', builtin.diagnostics, {})
+vim.keymap.set('n', '<leader>el', function() builtin.diagnostics { bufnr = 0 } end, {})
 
 -- File
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -21,6 +21,9 @@ vim.keymap.set('n', '<leader>ml', builtin.marks, {})
 local actions = require "telescope.actions"
 require("telescope").setup {
     defaults = {
+        vimgrep_arguments = {
+            'rg',
+        },
         mappings = {
             i = {
                 ["<Tab>"] = actions.select_default,

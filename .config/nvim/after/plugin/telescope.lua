@@ -21,9 +21,6 @@ vim.keymap.set('n', '<leader>ml', builtin.marks, {})
 local actions = require "telescope.actions"
 require("telescope").setup {
     defaults = {
-        vimgrep_arguments = {
-            'rg',
-        },
         mappings = {
             i = {
                 ["<Tab>"] = actions.select_default,

@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "Y", "y$")
-vim.keymap.set({ "n", "v" }, "U", "<C-r>")
+vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set({ "n", "v" }, "<Esc>", "<cmd>nohlsearch<cr>")
 
 vim.keymap.set({ "n", "v" }, "<C-h>", "^")
@@ -15,6 +15,7 @@ vim.keymap.set({ "n", "v" }, "n", "nzz")
 vim.keymap.set({ "n", "v" }, "N", "Nzz")
 vim.keymap.set({ "n", "v" }, "*", "*zz")
 vim.keymap.set({ "n", "v" }, "#", "#zz")
+vim.keymap.set({ "n", "v" }, "G", "Gzz")
 
 vim.keymap.set("v", "P", "\"_dP")
 

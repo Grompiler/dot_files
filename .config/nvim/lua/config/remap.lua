@@ -17,7 +17,7 @@ vim.keymap.set({ "n", "v" }, "*", "*zz")
 vim.keymap.set({ "n", "v" }, "#", "#zz")
 vim.keymap.set({ "n", "v" }, "G", "Gzz")
 
-vim.keymap.set("v", "P", "\"_dP")
+vim.keymap.set("x", "P", "\"_dP")
 
 vim.keymap.set({ "n", "v" }, "<leader><Tab>", "<cmd>b#<cr>")
 

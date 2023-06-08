@@ -58,8 +58,6 @@
         (command: Execute, value: "dmenu_run", modifier: ["modkey"], key: "d"),
         (command: Execute, value: "kitty", modifier: ["modkey"], key: "Return"),
         (command: Execute, value: "firefox-developer-edition", modifier: ["modkey"], key: "f"),
-        (command: Execute, value: "clion", modifier: ["modkey"], key: "c"),
-        (command: Execute, value: "emacs", modifier: ["modkey"], key: "a"),
         (command: Execute, value: "maim --select --hidecursor ~/Downloads/screenshot.png", modifier: ["modkey"], key: "p"),
         (command: ToggleFullScreen, modifier: ["modkey"], key: "m"),
         (command: ToggleFloating, modifier: ["modkey", "Shift"], key: "f"),

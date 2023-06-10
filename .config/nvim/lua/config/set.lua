@@ -20,7 +20,7 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 4
 vim.opt.sidescrolloff = 16
 vim.opt.signcolumn = "yes"
 

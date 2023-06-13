@@ -47,18 +47,25 @@ require("telescope").setup {
                 }
             }
         }
-    }
+    },
 }
 
 require("telescope").load_extension "file_browser"
+require('telescope').load_extension "project"
+
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader><leader>",
+    "<cmd>Telescope file_browser<CR>",
+    { noremap = true }
+)
 vim.api.nvim_set_keymap(
     "n",
     "<leader>.",
-    "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
+    "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
     { noremap = true }
 )
 
-require('telescope').load_extension "project"
 vim.api.nvim_set_keymap(
     'n',
     '<leader>pp',

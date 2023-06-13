@@ -1,6 +1,9 @@
-local do_not_infer_comments = function()
+local do_not_infer_new_line_comments = function()
     -- Set proper options for every new buffer, see :verb set formatoptions
-    vim.cmd([[autocmd BufEnter * set formatoptions-=cro]])
+    vim.api.nvim_create_autocmd('BufEnter', {
+        pattern = '',
+        command = 'set fo-=c fo-=r fo-=o',
+    })
 end
 
 local highlight_on_yank = function()

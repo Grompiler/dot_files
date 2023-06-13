@@ -29,6 +29,7 @@ vim.keymap.set("v", "<Esc>", "<C-c>")
 vim.keymap.set('n', '<leader>ar', vim.lsp.buf.rename, { desc = "Action Rename" })
 vim.keymap.set('n', '<leader>af', vim.lsp.buf.format, { desc = "Action Format" })
 vim.keymap.set('n', '<leader>al', "<cmd>LspRestart<cr>", { desc = "Action LspRestart" })
+vim.keymap.set('n', '<leader>ah', "<cmd>Telescope help_tags<cr>", { desc = "Action Help" })
 
 -- Buffer
 vim.keymap.set({ "n", "v" }, "<leader>bk", "<cmd>bw<cr>", { desc = "Buffer Kill" })

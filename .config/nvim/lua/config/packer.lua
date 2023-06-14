@@ -67,4 +67,7 @@ return require('packer').startup(function(use)
         'phaazon/hop.nvim',
         branch = 'v2', -- optional but strongly recommended
     }
+    use {
+        'chentoast/marks.nvim',
+    }
 end)

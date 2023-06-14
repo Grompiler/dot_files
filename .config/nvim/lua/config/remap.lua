@@ -23,6 +23,7 @@ vim.keymap.set({ "n", "v" }, "<leader><Tab>", "<cmd>b#<cr>")
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 vim.keymap.set("v", "<Esc>", "<C-c>")
+vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>")
 
 
 -- Actions

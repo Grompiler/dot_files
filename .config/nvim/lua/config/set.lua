@@ -30,15 +30,9 @@ vim.opt.cursorline = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
--- Set proper options for every new buffer, see :verb set formatoptions
-vim.cmd([[autocmd BufEnter * set formatoptions-=cro]])
-
--- Highlight on yank
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-    group = highlight_group,
-    pattern = '*',
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    pattern = { "*" },
+    command = "normal zx zR",
 })

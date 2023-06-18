@@ -29,10 +29,3 @@ vim.opt.cursorline = true
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-    pattern = { "*" },
-    command = "normal zx zR",
-})

@@ -8,7 +8,7 @@ require('lualine').setup {
         lualine_b = { { 'filename', path = 1 }, 'searchcount', 'selectioncount' },
         lualine_c = { 'branch', 'diff' },
         lualine_x = { 'diagnostics', 'encoding', 'filesize' },
-        lualine_y = { { 'filetype', icons_enabled = false } },
+        lualine_y = { { 'filetype', icons_enabled = false, color = { gui = 'bold' } } },
         lualine_z = { 'progress', 'location' },
     }
 }

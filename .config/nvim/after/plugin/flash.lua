@@ -17,7 +17,7 @@ require('flash').setup({
             jump = { register = true },
         },
         treesitter = {
-            labels = "asdfjkl;",
+            labels = "asdfjkl",
         }
     },
     prompt = {

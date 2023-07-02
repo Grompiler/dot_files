@@ -64,10 +64,13 @@ return require('packer').startup(function(use)
         "windwp/nvim-autopairs",
     }
     use {
-        'phaazon/hop.nvim',
-        branch = 'v2', -- optional but strongly recommended
+        'chentoast/marks.nvim',
     }
     use {
-        'chentoast/marks.nvim',
+        'phaazon/hop.nvim',
+        branch = 'v2',
+    }
+    use {
+        'folke/flash.nvim',
     }
 end)

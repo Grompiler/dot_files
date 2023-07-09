@@ -55,8 +55,7 @@ vim.keymap.set('n', '<leader>ep', vim.diagnostic.goto_prev, { desc = "Error Prev
 vim.keymap.set({ "n", "v" }, "<leader>fs", "<cmd>wa<cr>", { desc = "File Save" })
 
 -- Kill
-vim.keymap.set({ "n", "v" }, "<leader>kk", "<cmd>bw<cr>", { desc = "Kill" })
-vim.keymap.set({ "n", "v" }, "<leader>kK", "<cmd>bw!<cr>", { desc = "Kill !" })
+vim.keymap.set({ "n", "v" }, "<leader>kk", "<cmd>bw!<cr>", { desc = "Kill!" })
 
 -- Open
 vim.keymap.set({ "n", "v" }, "<leader>ot", "<cmd>vsplit | terminal<cr>", { desc = "Open Terminal" })

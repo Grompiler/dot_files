@@ -17,5 +17,5 @@ local highlight_on_yank = function()
     })
 end
 
-do_not_infer_comments()
+do_not_infer_new_line_comments()
 highlight_on_yank()

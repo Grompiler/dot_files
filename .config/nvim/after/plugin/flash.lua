@@ -11,13 +11,13 @@ require('flash').setup({
             enabled = false,
         },
         char = {
-            enabled = false,
+            enabled = true,
             keys = { "f", "F", "t", "T", ";", "," },
             highlight = { backdrop = false },
             jump = { register = true },
         },
         treesitter = {
-            labels = "asdfjkl",
+            labels = "01234789",
         }
     },
     prompt = {

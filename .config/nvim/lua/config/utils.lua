@@ -17,5 +17,21 @@ local highlight_on_yank = function()
     })
 end
 
+local set_no_hl_on_insert_enter = function()
+    vim.api.nvim_create_autocmd('InsertEnter', {
+        pattern = '',
+        command = 'set nohlsearch',
+    })
+end
+
+local set_hl_on_insert_leave = function()
+    vim.api.nvim_create_autocmd('InsertLeave', {
+        pattern = '',
+        command = 'set hlsearch',
+    })
+end
+
 do_not_infer_new_line_comments()
 highlight_on_yank()
+set_no_hl_on_insert_enter()
+set_hl_on_insert_leave()

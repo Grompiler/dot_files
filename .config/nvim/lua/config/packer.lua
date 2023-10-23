@@ -40,7 +40,12 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' },     -- Required
         }
     }
-    use { 'NeogitOrg/neogit', requires = {
+    use {
+        "sindrets/diffview.nvim"
+    }
+    use {
+        'NeogitOrg/neogit',
+        requires = {
             'nvim-lua/plenary.nvim',
             'sindrets/diffview.nvim'
         }

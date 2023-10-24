@@ -3,55 +3,56 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
+return require("packer").startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use "wbthomason/packer.nvim"
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        requires = { { 'nvim-lua/plenary.nvim' } }
+        "nvim-telescope/telescope.nvim", tag = "0.1.1",
+        requires = { { "nvim-lua/plenary.nvim" } }
     }
     use({
-        'rebelot/kanagawa.nvim',
-        as = 'kanagawa',
+        "rebelot/kanagawa.nvim",
+        as = "kanagawa",
         config = function()
-            vim.cmd('colorscheme kanagawa')
+            vim.cmd("colorscheme kanagawa")
         end
     })
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
     use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
+        "VonHeikemen/lsp-zero.nvim",
+        branch = "v2.x",
         requires = {
             -- LSP Support
-            { 'neovim/nvim-lspconfig' }, -- Required
+            { "neovim/nvim-lspconfig" }, -- Required
             {
                 -- Optional
-                'williamboman/mason.nvim',
+                "williamboman/mason.nvim",
                 run = function()
-                    pcall(vim.cmd, 'MasonUpdate')
+                    pcall(vim.cmd, "MasonUpdate")
                 end,
             },
-            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+            { "williamboman/mason-lspconfig.nvim" }, -- Optional
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },     -- Required
-            { 'hrsh7th/cmp-path' },     -- Convenient
-            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' },     -- Required
+            { "hrsh7th/nvim-cmp" },     -- Required
+            { "hrsh7th/cmp-path" },     -- Convenient
+            { "hrsh7th/cmp-nvim-lsp" }, -- Required
+            { "L3MON4D3/LuaSnip" },     -- Required
         }
     }
     use {
         "sindrets/diffview.nvim"
     }
     use {
-        'NeogitOrg/neogit',
+        "NeogitOrg/neogit",
         requires = {
-            'nvim-lua/plenary.nvim',
+            "nvim-lua/plenary.nvim",
+            "sindrets/diffview.nvim"
         }
     }
     use {
         "nvim-telescope/telescope-file-browser.nvim",
-        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", 'nvim-tree/nvim-web-devicons' }
+        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" }
     }
     use {
         "nvim-telescope/telescope-project.nvim",
@@ -59,26 +60,26 @@ return require('packer').startup(function(use)
             "nvim-lua/plenary.nvim" }
     }
     use {
-        'lewis6991/gitsigns.nvim',
+        "lewis6991/gitsigns.nvim",
     }
     use {
-        'numToStr/Comment.nvim',
+        "numToStr/Comment.nvim",
     }
     use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+        "nvim-lualine/lualine.nvim",
+        requires = { "nvim-tree/nvim-web-devicons", opt = true }
     }
     use {
         "windwp/nvim-autopairs",
     }
     use {
-        'chentoast/marks.nvim',
+        "chentoast/marks.nvim",
     }
     use {
-        'phaazon/hop.nvim',
-        branch = 'v2',
+        "phaazon/hop.nvim",
+        branch = "v2",
     }
     use {
-        'folke/flash.nvim',
+        "folke/flash.nvim",
     }
 end)

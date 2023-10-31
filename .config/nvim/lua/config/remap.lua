@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.keymap.set({ "n", "v", "i", "t", "s", "x", "o" }, "<C-z>", "<nop>")
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "Y", "y$")

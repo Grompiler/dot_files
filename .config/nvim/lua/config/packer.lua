@@ -73,7 +73,7 @@ return require("packer").startup(function(use)
         "windwp/nvim-autopairs",
     }
     use {
-        "chentoast/marks.nvim",
+        "ThePrimeagen/harpoon"
     }
     use {
         "phaazon/hop.nvim",

@@ -14,10 +14,6 @@ vim.keymap.set('n', '<leader>el', function() builtin.diagnostics { bufnr = 0 } e
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
 
-
--- Marks
-vim.keymap.set('n', '<leader>ml', builtin.marks, {})
-
 local actions = require "telescope.actions"
 require("telescope").setup {
     defaults = {

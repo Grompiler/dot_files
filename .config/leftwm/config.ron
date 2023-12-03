@@ -24,7 +24,7 @@
         "9",
     ],
     max_window_width: None,
-        layouts: [
+    layouts: [
         "MainAndVertStack",
         // MainAndHorizontalStack,
         // MainAndDeck,

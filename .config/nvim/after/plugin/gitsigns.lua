@@ -20,11 +20,5 @@ require('gitsigns').setup {
             vim.schedule(function() gitsigns.prev_hunk() end)
             return '<Ignore>'
         end, { expr = true })
-
-        -- Actions
-        map('n', '<leader>gb', gitsigns.toggle_current_line_blame)
-        map('n', '<leader>gB', function() gitsigns.blame_line { full = true } end)
-        map('n', '<leader>gd', function() gitsigns.diffthis('~') end)
-        map('n', '<leader>gx', gitsigns.reset_hunk)
     end
 }

@@ -6,8 +6,10 @@ local autocmd = vim.api.nvim_create_autocmd
 autocmd("FileType", {
     pattern = "fugitive",
     callback = function()
-        vim.keymap.set({ "n", "v" }, "f", "<cmd>Git fetch|echo '> git fetched'<cr>")
-        vim.keymap.set({ "n", "v" }, "F", "<cmd>Git pull|echo '> git pulled'<cr>")
+        vim.keymap.set({ "n", "v" }, "<leader>f", "<cmd>Git fetch|echo '> git fetched'<cr>")
+        vim.keymap.set({ "n", "v" }, "<leader>F", "<cmd>Git pull|echo '> git pulled'<cr>")
+        vim.keymap.set({ "n", "v" }, "<leader>p", "<cmd>Git push|echo '> git pushed'<cr>")
+        vim.keymap.set({ "n", "v" }, "<leader>P", "<cmd>Git push --force|echo '> git forced push'<cr>")
         vim.keymap.set({ "n", "v" }, "<leader>bb", "<cmd>Git branch -a|echo '> git branch all'<cr>")
         vim.keymap.set({ "n", "v" }, "<leader>ll", "<cmd>Git log --graph|echo '> git log graph'<cr>")
         vim.keymap.set({ "n", "v" }, "<leader>zp", "<cmd>Git stash push|echo '> git stash push'<cr>")

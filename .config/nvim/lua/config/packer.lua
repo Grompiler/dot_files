@@ -41,14 +41,7 @@ return require("packer").startup(function(use)
         }
     }
     use {
-        "sindrets/diffview.nvim"
-    }
-    use {
-        "NeogitOrg/neogit",
-        requires = {
-            "nvim-lua/plenary.nvim",
-            "sindrets/diffview.nvim"
-        }
+        "tpope/vim-fugitive"
     }
     use {
         "nvim-telescope/telescope-file-browser.nvim",

@@ -6,6 +6,19 @@ vim.keymap.set('n', '<leader>*', builtin.grep_string, {})
 
 -- Buffer
 vim.keymap.set('n', '<leader>bb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>?', builtin.current_buffer_fuzzy_find, {})
+
+-- Git for fugitive
+local autocmd = vim.api.nvim_create_autocmd
+autocmd("FileType", {
+    pattern = "fugitive",
+    callback = function()
+        vim.keymap.set({ 'n', 'v' }, '<leader>zl', builtin.git_stash, {})
+        vim.keymap.set({ 'n', 'v' }, '<leader>lc', builtin.git_commits, {})
+        vim.keymap.set({ 'n', 'v' }, '<leader>bb', builtin.git_branches, {})
+    end,
+})
+
 
 -- Errors
 vim.keymap.set('n', '<leader>el', function() builtin.diagnostics { bufnr = 0 } end, {})

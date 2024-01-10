@@ -1,6 +1,6 @@
 -- Install required lsp with :Mason
 local lsp = require('lsp-zero').preset({
-        manage_nvim_cmp = {
+    manage_nvim_cmp = {
         set_sources = 'recommended'
     }
 })
@@ -27,7 +27,8 @@ lsp.setup()
 -- mappings
 -- You need to setup `cmp` after lsp-zero
 local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
+local cmp_select = { behavior = cmp.SelectBehavior.None }
+local cmp_format = require('lsp-zero').cmp_format()
 -- local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
@@ -44,5 +45,9 @@ cmp.setup({
         -- ['<C-k>'] = cmp_action.luasnip_jump_backward(),
         ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
-    }
+    },
+    preselect = 'item',
+    completion = {
+        completeopt = 'menu,menuone,noinsert'
+    },
 })

@@ -27,7 +27,7 @@ lsp.setup()
 -- mappings
 -- You need to setup `cmp` after lsp-zero
 local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.None }
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_format = require('lsp-zero').cmp_format()
 -- local cmp_action = require('lsp-zero').cmp_action()
 

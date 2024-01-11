@@ -75,4 +75,7 @@ return require("packer").startup(function(use)
     use {
         "folke/flash.nvim",
     }
+    use {
+        "stevearc/oil.nvim",
+    }
 end)

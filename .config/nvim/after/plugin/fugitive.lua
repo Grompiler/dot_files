@@ -1,5 +1,8 @@
 vim.keymap.set({ "n", "v" }, "<leader>gg", "<cmd>vert Git<cr>")
-vim.keymap.set("n", "<leader>gd", "<cmd>Gvdiff<cr>")
+vim.keymap.set("n", "<leader>gdd", "<cmd>Gvdiff<cr>")
+vim.keymap.set("n", "<leader>gmm", "<cmd>Gvdiff!<cr>")
+vim.keymap.set("n", "<leader>gmh", "<cmd>diffget //2<cr>")
+vim.keymap.set("n", "<leader>gml", "<cmd>diffget //3<cr>")
 vim.keymap.set("n", "<leader>gM", "<cmd>Git blame<cr>")
 
 vim.keymap.set({ "n", "v" }, "<leader>gf", "<cmd>Git fetch|echo '> git fetched'<cr>")

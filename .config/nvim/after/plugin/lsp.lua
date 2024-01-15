@@ -20,8 +20,20 @@ lsp.format_on_save({
     }
 })
 
--- (Optional) Configure lua language server for neovim
+-- Configure language servers for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+require('lspconfig').rust_analyzer.setup({
+    settings = {
+        ['rust-analyzer'] = {
+            completion = {
+                autoimport = {
+                    enable = false,
+                }
+            }
+        }
+    }
+})
+
 lsp.setup()
 
 -- mappings
@@ -39,9 +51,6 @@ cmp.setup({
         -- Ctrl+Space to trigger completion menu
         ['<C-Space>'] = cmp.mapping.complete(),
 
-        -- Navigate between snippet placeholder
-        -- ['<C-j>'] = cmp_action.luasnip_jump_forward(),
-        -- ['<C-k>'] = cmp_action.luasnip_jump_backward(),
         ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
     },

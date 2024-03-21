@@ -27,7 +27,7 @@ require("harpoon").setup({
 
 vim.api.nvim_set_keymap(
     "n",
-    "ma",
+    "mm",
     "<cmd>lua require('harpoon.mark').add_file()<CR>",
     { noremap = true }
 )
@@ -39,7 +39,7 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
     "n",
-    "mm",
+    "mn",
     "<cmd>lua require('harpoon.ui').nav_next()<CR>",
     { noremap = true }
 )
@@ -55,9 +55,27 @@ vim.api.nvim_set_keymap(
     "<cmd>lua require('harpoon.term').gotoTerminal(1)<CR>",
     { noremap = true }
 )
--- vim.api.nvim_set_keymap(
---     "n",
---     "mc",
---     "<cmd>lua require('harpoon.term').sendCommand(1, 'ls -La')<CR>",
---     { noremap = true }
--- )
+vim.api.nvim_set_keymap(
+    "n",
+    "ma",
+    "<cmd>lua require('harpoon.ui').nav_file(1)<CR>",
+    { noremap = true }
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "ms",
+    "<cmd>lua require('harpoon.ui').nav_file(2)<CR>",
+    { noremap = true }
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "md",
+    "<cmd>lua require('harpoon.ui').nav_file(3)<CR>",
+    { noremap = true }
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "mf",
+    "<cmd>lua require('harpoon.ui').nav_file(4)<CR>",
+    { noremap = true }
+)

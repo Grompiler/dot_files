@@ -7,7 +7,7 @@ return require("packer").startup(function(use)
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
     use {
-        "nvim-telescope/telescope.nvim", tag = "0.1.4",
+        "nvim-telescope/telescope.nvim", branch = '0.1.x',
         requires = { { "nvim-lua/plenary.nvim" } }
     }
     use({
@@ -66,7 +66,8 @@ return require("packer").startup(function(use)
         "windwp/nvim-autopairs",
     }
     use {
-        "ThePrimeagen/harpoon"
+        "ThePrimeagen/harpoon",
+        requires = { { "nvim-lua/plenary.nvim" } }
     }
     use {
         "phaazon/hop.nvim",
@@ -77,5 +78,15 @@ return require("packer").startup(function(use)
     }
     use {
         "stevearc/oil.nvim",
+    }
+    use {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        after = "nvim-treesitter",
+        requires = "nvim-treesitter/nvim-treesitter",
+    }
+    use {
+        "nvim-treesitter/nvim-treesitter-context",
+        after = "nvim-treesitter",
+        requires = "nvim-treesitter/nvim-treesitter",
     }
 end)

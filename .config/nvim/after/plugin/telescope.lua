@@ -10,7 +10,7 @@ vim.keymap.set('n', '<leader>?', builtin.current_buffer_fuzzy_find, {})
 
 -- Git
 vim.keymap.set({ 'n', 'v' }, '<leader>gbb', builtin.git_branches, {})
-vim.keymap.set({ 'n', 'v' }, '<leader>gcc', builtin.git_commits, {})
+-- vim.keymap.set({ 'n', 'v' }, '<leader>gcc', builtin.git_commits, {})
 vim.keymap.set({ 'n', 'v' }, '<leader>gzz', builtin.git_stash, {})
 
 -- Errors

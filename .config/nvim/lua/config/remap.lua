@@ -16,8 +16,6 @@ vim.keymap.set({ "n", "v" }, "<C-k>", "Hzz")
 vim.keymap.set({ "n", "v" }, "<C-j>", "Lzz")
 vim.keymap.set({ "n", "v" }, "<C-i>", "<C-i>zz")
 vim.keymap.set({ "n", "v" }, "<C-o>", "<C-o>zz")
-vim.keymap.set({ "n", "v" }, "<C-m>", "]mzz")
-vim.keymap.set({ "n", "v" }, "<C-,>", "[mzz")
 vim.keymap.set({ "n", "v" }, "n", "nzz")
 vim.keymap.set({ "n", "v" }, "N", "Nzz")
 vim.keymap.set({ "n", "v" }, "*", "*zz")
@@ -33,11 +31,6 @@ vim.keymap.set("v", "<Esc>", "<C-c>")
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>")
 
 
--- Actions
-vim.keymap.set('n', '<leader>ar', vim.lsp.buf.rename, { desc = "Action Rename" })
-vim.keymap.set('n', '<leader>af', vim.lsp.buf.format, { desc = "Action Format" })
-vim.keymap.set('n', '<leader>al', "<cmd>LspRestart<cr>", { desc = "Action LspRestart" })
-vim.keymap.set('n', '<leader>ah', "<cmd>Telescope help_tags<cr>", { desc = "Action Help" })
 
 -- Buffer
 vim.keymap.set({ "n", "v" }, "<leader>bk", "<cmd>bw<cr>", { desc = "Buffer Kill" })
@@ -61,8 +54,16 @@ vim.keymap.set('n', '<leader>ep', vim.diagnostic.goto_prev, { desc = "Error Prev
 -- File
 vim.keymap.set({ "n", "v" }, "<leader>fs", "<cmd>wa<cr>", { desc = "File Save" })
 
+-- Help
+vim.keymap.set('n', '<leader>hh', "<cmd>Telescope help_tags<cr>", { desc = "Action Help" })
+
 -- Kill
 vim.keymap.set({ "n", "v" }, "<leader>kk", "<cmd>bw!<cr>", { desc = "Kill!" })
+
+-- LSP
+vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, { desc = "LSP Rename" })
+vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format, { desc = "LSP Format" })
+vim.keymap.set('n', '<leader>lq', "<cmd>LspRestart<cr>", { desc = "LSP Quit (LspRestart)" })
 
 -- Open
 vim.keymap.set({ "n", "v" }, "<leader>ot", "<cmd>vsplit | terminal<cr>", { desc = "Open Terminal" })

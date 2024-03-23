@@ -9,13 +9,13 @@ require('gitsigns').setup {
         end
 
         -- Navigation
-        map('n', '<leader>jc', function()
+        map('n', '<leader>gc', function()
             if vim.wo.diff then return ']c' end
             vim.schedule(function() gitsigns.next_hunk() end)
             return '<Ignore>'
         end, { expr = true })
 
-        map('n', '<leader>jC', function()
+        map('n', '<leader>gC', function()
             if vim.wo.diff then return '[c' end
             vim.schedule(function() gitsigns.prev_hunk() end)
             return '<Ignore>'

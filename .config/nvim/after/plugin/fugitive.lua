@@ -14,6 +14,10 @@ vim.keymap.set({ "n", "v" }, "<leader>gll",
     "<cmd>vert Git log --decorate --graph --name-only|echo '> git log graph'<cr>")
 vim.keymap.set({ "n", "v" }, "<leader>gla",
     "<cmd>vert Git log --decorate --graph --all --name-only|echo '> git log all graph'<cr>")
+vim.keymap.set({ "n", "v" }, "<leader>glr",
+    "<cmd>vert Git log --decorate --graph --name-only --max-count=50|echo '> git log recent graph'<cr>")
+vim.keymap.set({ "n", "v" }, "<leader>glR",
+    "<cmd>vert Git log --decorate --graph --all --name-only --max-count=50|echo '> git log all recent graph'<cr>")
 vim.keymap.set({ "n", "v" }, "<leader>grl", "<cmd>vert Git reflog|echo '> git reflog'<cr>")
 vim.keymap.set({ "n", "v" }, "<leader>gzp", "<cmd>Git stash push|echo '> git stash push'<cr>")
 vim.keymap.set({ "n", "v" }, "<leader>gzP", "<cmd>Git stash pop|echo '> git stash pop'<cr>")

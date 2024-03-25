@@ -69,6 +69,9 @@ vim.keymap.set('n', '<leader>lq', "<cmd>LspRestart<cr>", { desc = "LSP Quit (Lsp
 vim.keymap.set({ "n", "v" }, "<leader>ot", "<cmd>vsplit | terminal<cr>", { desc = "Open Terminal" })
 vim.keymap.set({ "n", "v" }, "<leader>oT", "<cmd>terminal<cr>", { desc = "Open Terminal here" })
 
+-- Project
+vim.keymap.set({ "n" }, "<leader>pr", "<cmd>cd %:p:h<cr>", { desc = "Project Root" })
+
 -- Window
 vim.keymap.set("n", "+", "<C-w>>", { desc = "Increase Window size" })
 vim.keymap.set("n", "-", "<C-w><", { desc = "Decrease Window size" })
